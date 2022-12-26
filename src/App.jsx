@@ -1,13 +1,16 @@
 import "./App.css";
 import PokemonCard from "./components/PokemonCard/PokemonCard";
+import PokemonGrid from "./components/PokemonGrid/PokemonGrid";
 import Searcher from "./components/Searcher/Searcher";
 
 function App() {
     return (
         <div className="App">
-            <h1>POKEDUX</h1>
+            <div className="title">
+                <h1>POKEDUX</h1>
+            </div>
             <Searcher />
-            <PokemonCard />
+            <PokemonGrid></PokemonGrid>
         </div>
     );
 }

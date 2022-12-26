@@ -1,0 +1,14 @@
+/* .container {
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fill), minmax(15rem, 1fr);
+} */
+
+.container {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: minmax(260px, auto);
+    gap: 20px;
+}
