@@ -1,0 +1,92 @@
+.card {
+    position: relative;
+    width: 220px;
+    height: 320px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: red;
+    color: black;
+    transform: skewY(345deg);
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    top: -70%;
+    transform: skewY(390deg);
+}
+
+.card .contentBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.card:hover .contentBox {
+    padding-bottom: 0;
+    height: 80%;
+}
+
+.card .contentBox img {
+    max-width: 75%;
+    transition: 0.5s;
+}
+
+.card:hover .contentBox img {
+    max-width: 50%;
+}
+
+.card h2 {
+    padding-top: 20px;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s;
+}
+
+.card .footer .stats {
+    font-size: 1rem;
+    opacity: 1;
+    color: gray;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.card .footer .type {
+    position: relative;
+    opacity: 0;
+    padding: 3px 9px;
+    margin-top: 5px;
+    background: red;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.card:hover .footer .type {
+    opacity: 1;
+}

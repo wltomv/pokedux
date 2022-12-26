@@ -1,4 +1,5 @@
 import "./App.css";
+import PokemonCard from "./components/PokemonCard/PokemonCard";
 import Searcher from "./components/Searcher/Searcher";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
         <div className="App">
             <h1>POKEDUX</h1>
             <Searcher />
+            <PokemonCard />
         </div>
     );
 }
