@@ -1,0 +1,21 @@
+.searchbar {
+    display: flex;
+    justify-content: center;
+}
+
+.textfield {
+    height: 32px;
+    width: 50%;
+    border: 1px solid #7e4040;
+    border-radius: 4px 0 0 4px;
+    padding: 0 32px 0 16px;
+}
+
+.textfield:hover {
+    cursor: pointer;
+}
+
+.btnSearch {
+    height: 34px;
+    width: 32px;
+}
