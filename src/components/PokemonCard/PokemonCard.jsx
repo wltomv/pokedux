@@ -4,7 +4,7 @@ import { BsFillStarFill } from "react-icons/bs";
 import { FaGoogle } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
-const PokemonCard = () => {
+const PokemonCard = ({ name, imagesrc }) => {
     return (
         <div className="card">
             <button onClick={() => alert("Settings page")} className="star">
@@ -12,10 +12,10 @@ const PokemonCard = () => {
             </button>
             <div className="contentBox">
                 <img
-                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg"
+                    src={imagesrc}
                     alt=""
                 />
-                <h2>Charizard</h2>
+                <h2>{name}</h2>
             </div>
             <div className="footer">
                 <h3 className="stats">40</h3>
