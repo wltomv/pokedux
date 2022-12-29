@@ -2,13 +2,19 @@ import PokemonCard from "../PokemonCard/PokemonCard";
 
 import "./PokemonGrid.css";
 
-const pokemonsTemp = Array(10).fill("");
 const PokemonGrid = ({ pokemons }) => {
-    console.log(pokemons);
     return (
         <div className="container">
             {pokemons.map((pokemon) => {
-                return <PokemonCard name={pokemon.name} />;
+                return (
+                    <PokemonCard
+                        name={pokemon.name}
+                        imagesrc={
+                            pokemon.sprites.other.dream_world.front_default
+                        }
+                        type={pokemon.types[0].type.name}
+                    />
+                );
             })}
         </div>
     );
