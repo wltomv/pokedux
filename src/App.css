@@ -5,4 +5,7 @@
 .title {
     padding: 20px;
     text-align: center;
+    font-family: "Pokemon Solid", sans-serif;
+    letter-spacing: 7px;
+    color: #ffcb05;
 }

@@ -1,12 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import PokemonGrid from "./components/PokemonGrid/PokemonGrid";
 import Searcher from "./components/Searcher/Searcher";
 import { getPokemons, getPokemonDetails } from "./api";
 import { setPokemons } from "./actions";
 import { useDispatch, useSelector } from "react-redux";
+import LoadingSpinner from "./components/Loader/Loader";
 
 function App() {
+    const [isLoading, setIsLoading] = useState(false);
     const pokemons = useSelector((state) => state.pokemons);
     const dispatch = useDispatch();
 
@@ -17,8 +19,9 @@ function App() {
                 pokemonsRes.map((pokemon) => getPokemonDetails(pokemon))
             );
             dispatch(setPokemons(pokemonsDetailed));
+            setIsLoading(false);
         };
-
+        setIsLoading(true);
         fetchPokemons();
     }, []);
 
@@ -28,7 +31,11 @@ function App() {
                 <h1>POKEDUX</h1>
             </div>
             <Searcher />
-            <PokemonGrid pokemons={pokemons} />
+            {isLoading ? (
+                <LoadingSpinner />
+            ) : (
+                <PokemonGrid pokemons={pokemons} />
+            )}
         </div>
     );
 }
